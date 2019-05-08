@@ -5,6 +5,15 @@ $(document).ready(function() {
 function fetchAndDisplayGif(event) {
     event.preventDefault();
     
+    var captcha = $("#captcha").val();
+    if (captcha != 5 && captcha != "five" && captcha != "Five") {
+        setGifLoadedStatus(false);
+        document.getElementById("captcha").style.color = "red";
+      return false;
+    }
+    else {
+    }
+    
     var searchQuery = $("#tag").val();
 
     var params = { 
